@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:ffi';
+
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
@@ -298,14 +298,14 @@ class Dapi {
   static Future<CreateTransferResponse> _createTransfer(
     String userID,
     String? accountID,
-    DapiBeneficiary beneficiary,
+    DapiBeneficiary? beneficiary,
     double? amount,
     String? remark,
   ) async {
     final List<dynamic> params = [
       userID,
       accountID,
-      beneficiary._toMap(),
+      beneficiary?._toMap(),
       amount,
       remark
     ];
